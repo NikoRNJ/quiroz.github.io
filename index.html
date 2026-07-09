@@ -61,21 +61,47 @@
   <main>
     <!-- Hero Section -->
     <section class="hero-section" id="hero">
+      <div class="hero-decor" aria-hidden="true">
+        <span class="hero-blob hero-blob-1"></span>
+        <span class="hero-blob hero-blob-2"></span>
+        <i class="fa-solid fa-cookie-bite hero-sprinkle hero-sprinkle-1"></i>
+        <i class="fa-solid fa-mug-hot hero-sprinkle hero-sprinkle-2"></i>
+      </div>
       <div class="container hero-container">
         <div class="hero-content">
-          <span class="hero-badge">Hechos a Mano con Amor</span>
-          <h1 class="hero-title">Un bocado de felicidad en cada alfajor</h1>
-          <p class="hero-subtitle">Descubre una experiencia artesanal única. Alfajores premium cubiertos del chocolate más fino, rellenos de dulce de leche cremoso y diseñados especialmente para tus momentos más dulces.</p>
+          <span class="hero-badge"><i class="fa-solid fa-house-chimney-heart"></i> Receta de familia, hecha a pedido</span>
+          <h1 class="hero-title">
+            El alfajor que te hace decir
+            <span class="hero-title-accent">
+              &ldquo;uno más, porfa&rdquo;
+              <svg class="hero-underline" viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true">
+                <path d="M2,14 C60,4 120,18 150,10 C190,0 250,16 298,8"></path>
+              </svg>
+            </span>
+          </h1>
+          <p class="hero-subtitle">Masa que se deshace, dulce de leche que abraza y un baño de chocolate que cruje al primer mordisco. Se arman en tandas pequeñas, con tiempo — no en una fábrica.</p>
           <div class="hero-actions-container">
-            <a href="#catalogo" class="btn btn-primary" id="hero-cta-catalog">Explorar Sabores</a>
-            <a href="#contacto" class="btn btn-secondary" id="hero-cta-contact">Hacer Consulta</a>
+            <a href="#catalogo" class="btn btn-primary" id="hero-cta-catalog"><i class="fa-solid fa-basket-shopping"></i> Quiero probarlos</a>
+            <a href="#contacto" class="btn btn-secondary" id="hero-cta-contact">Pedidos por encargo</a>
           </div>
+          <ul class="hero-trust-row">
+            <li><i class="fa-solid fa-hand-sparkles"></i> 100% artesanal</li>
+            <li><i class="fa-solid fa-gift"></i> Empaque para regalo</li>
+            <li><i class="fa-solid fa-route"></i> Coordinamos la entrega</li>
+          </ul>
         </div>
         <div class="hero-image-wrapper">
-          <img src="assets/hero_alfajores.png" alt="Torre de Alfajores Dulce Encanto" class="hero-image" id="hero-main-img">
-          <div class="hero-experience-badge">
-            <span class="badge-num">100%</span>
-            <span class="badge-txt">Artesanal</span>
+          <div class="hero-collage">
+            <div class="hero-tag-sticker">
+              <span class="badge-num">100%</span>
+              <span class="badge-txt">Artesanal</span>
+            </div>
+            <img src="assets/hero_alfajores.png" alt="Torre de Alfajores Dulce Encanto" class="hero-image hero-image-main" id="hero-main-img">
+            <img src="assets/alfajor_decorado.png" alt="Alfajor decorado a mano, de cerca" class="hero-image hero-image-float">
+            <div class="hero-note-card">
+              <i class="fa-solid fa-quote-left"></i>
+              <p>Cada caja se arma a mano.<br>Nada sale de una fábrica.</p>
+            </div>
           </div>
         </div>
       </div>
