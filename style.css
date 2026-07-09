@@ -313,95 +313,261 @@ p {
    HERO SECTION
    ========================================================================== */
 .hero-section {
-  padding: 160px 0 100px;
+  padding: 160px 0 120px;
   background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-beige) 100%);
   position: relative;
   overflow: hidden;
 }
 
+/* Soft, blurred organic shapes + drifting decorative icons behind the
+   content — depth cue without leaning on a generic SaaS gradient blob. */
+.hero-decor {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.35;
+}
+
+.hero-blob-1 {
+  width: 380px;
+  height: 380px;
+  top: -120px;
+  right: 8%;
+  background: var(--color-pink-sweet);
+}
+
+.hero-blob-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  left: -60px;
+  background: var(--color-caramel);
+  opacity: 0.3;
+}
+
+.hero-sprinkle {
+  position: absolute;
+  color: var(--color-chocolate);
+  opacity: 0.12;
+  font-size: 2.4rem;
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-sprinkle-1 { top: 18%; left: 46%; font-size: 2rem; animation-delay: 0.5s; }
+.hero-sprinkle-2 { bottom: 12%; right: 6%; font-size: 2.8rem; animation-delay: 1.5s; }
+
 .hero-container {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
   gap: 48px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background-color: rgba(240, 166, 202, 0.25);
   color: #c0517c;
   padding: 6px 16px;
   border-radius: 30px;
   font-size: 0.85rem;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   border: 1px solid rgba(240, 166, 202, 0.4);
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 3.3rem;
+  line-height: 1.15;
   margin-bottom: 24px;
   color: var(--color-chocolate);
 }
 
+.hero-title-accent {
+  position: relative;
+  display: inline-block;
+  font-style: italic;
+  color: var(--color-terracotta);
+}
+
+.hero-underline {
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 14px;
+}
+
+.hero-underline path {
+  fill: none;
+  stroke: var(--color-pink-rose);
+  stroke-width: 6;
+  stroke-linecap: round;
+}
+
 .hero-subtitle {
   font-size: 1.1rem;
-  margin-bottom: 36px;
+  margin-bottom: 32px;
   color: var(--color-cocoa-dark);
+  max-width: 50ch;
 }
 
 .hero-actions-container {
   display: flex;
   gap: 16px;
+  margin-bottom: 28px;
+}
+
+.hero-actions-container .btn i {
+  margin-right: 6px;
+}
+
+.hero-trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(122, 62, 62, 0.12);
+}
+
+.hero-trust-row li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-chocolate);
+}
+
+.hero-trust-row i {
+  color: var(--color-terracotta);
 }
 
 .hero-image-wrapper {
   position: relative;
 }
 
+.hero-collage {
+  position: relative;
+  padding: 30px 20px 40px 10px;
+}
+
 .hero-image {
-  width: 100%;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
   border: 6px solid var(--color-white);
-  transform: rotate(2deg);
   transition: var(--transition-smooth);
 }
 
-.hero-image-wrapper:hover .hero-image {
-  transform: rotate(0deg) scale(1.02);
+.hero-image-main {
+  width: 100%;
+  transform: rotate(-3deg);
+  position: relative;
+  z-index: 1;
 }
 
-.hero-experience-badge {
+.hero-collage:hover .hero-image-main {
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.hero-image-float {
   position: absolute;
-  bottom: -20px;
-  left: -20px;
+  width: 42%;
+  bottom: -6%;
+  right: -8%;
+  border-width: 5px;
+  transform: rotate(7deg);
+  z-index: 2;
+  animation: float 5s ease-in-out infinite;
+  animation-delay: 0.3s;
+}
+
+.hero-collage:hover .hero-image-float {
+  transform: rotate(3deg) scale(1.04);
+}
+
+.hero-tag-sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: var(--color-chocolate);
   color: var(--color-white);
-  padding: 20px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  width: 110px;
-  height: 110px;
+  border: 2px dashed rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-shadow: var(--shadow-lg);
-  border: 3px solid var(--bg-cream);
+  transform: rotate(-10deg);
+  z-index: 3;
   animation: float 4s ease-in-out infinite;
 }
 
 .badge-num {
   font-family: var(--font-serif);
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1;
 }
 
 .badge-txt {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+/* Hand-written-note style card, tacked on like a note left in the box */
+.hero-note-card {
+  position: absolute;
+  left: -6%;
+  bottom: 0;
+  max-width: 190px;
+  background-color: var(--color-white);
+  color: var(--color-cocoa-dark);
+  padding: 14px 16px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+  transform: rotate(-4deg);
+  z-index: 3;
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.hero-note-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 46px;
+  height: 16px;
+  background: rgba(240, 166, 202, 0.55);
+}
+
+.hero-note-card i {
+  color: var(--color-pink-rose);
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.hero-note-card p {
+  margin: 0;
 }
 
 .wave-separator {
@@ -1502,17 +1668,36 @@ p {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .hero-actions-container {
     justify-content: center;
   }
-  
+
+  .hero-trust-row {
+    justify-content: center;
+  }
+
+  .hero-subtitle {
+    max-width: none;
+  }
+
   .hero-image-wrapper {
     order: -1;
-    max-width: 450px;
-    margin: 0 auto 30px;
+    max-width: 380px;
+    margin: 0 auto 40px;
   }
-  
+
+  .hero-collage {
+    padding: 30px 24px 44px 4px;
+  }
+
+  .hero-note-card {
+    left: 50%;
+    bottom: -18px;
+    transform: translateX(-50%) rotate(-3deg);
+    max-width: 160px;
+  }
+
   .about-container {
     grid-template-columns: 1fr;
   }
@@ -1549,6 +1734,16 @@ p {
   }
   .hero-actions-container .btn {
     width: 100%;
+  }
+  .hero-tag-sticker {
+    width: 76px;
+    height: 76px;
+  }
+  .hero-note-card {
+    display: none;
+  }
+  .hero-trust-row {
+    gap: 12px 16px;
   }
   .catalog-controls {
     flex-direction: column;
